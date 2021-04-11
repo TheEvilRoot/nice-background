@@ -7,24 +7,6 @@
 
 import Cocoa
 
-extension String {
-    static let openMessage = "Open image to place in the center"
-    static let openTitle = "Open image"
-    static let openPrompt = "Open"
-    
-    static let exportMessage = "Export the background image"
-    static let exportTitle = "Export image"
-    static let exportPrompt = "Export"
-    static let saveNoUrl = "No URL provided to save the file. Try to save agains"
-    static let saveErrorOn = "Failed to save file on"
-    
-    static let notANumber = "is not a number!"
-    
-    static func localized(_ key: String) -> String {
-        return NSLocalizedString(key, comment: "")
-    }
-}
-
 class ViewController: NSViewController, DragAndDropImageViewDelegate {
     
     @IBOutlet weak var niceView: NiceView!
@@ -160,9 +142,9 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         guard let window = view.window else { print ("openImageAction/window is nil"); return }
         let panel = NSOpenPanel()
         panel.allowedFileTypes = ["png", "jpeg", "jpg", "bmp"]
-        panel.message = .localized(.openMessage)
-        panel.title = .localized(.openTitle)
-        panel.prompt = .localized(.openPrompt)
+        panel.message = NSLocalizedString("Open image to place in the center", comment: "")
+        panel.title = NSLocalizedString("Open image", comment: "")
+        panel.prompt = NSLocalizedString("Open", comment: "")
         panel.beginSheetModal(for: window, completionHandler: { response in
             if response == NSApplication.ModalResponse.OK {
                 guard let url = panel.url else { print("No url seleced!"); return }
@@ -179,13 +161,13 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         guard let window = view.window else { print ("saveNSImage/window is nil"); return }
         let panel = NSSavePanel()
         panel.allowedFileTypes = ["png"]
-        panel.message = .localized(.exportMessage)
-        panel.title = .localized(.exportTitle)
-        panel.prompt = .localized(.exportPrompt)
+        panel.message = NSLocalizedString("Export the background image", comment: "")
+        panel.title = NSLocalizedString("Export image", comment: "")
+        panel.prompt = NSLocalizedString("Export", comment: "")
         panel.beginSheetModal(for: window, completionHandler: { response in
             if response == NSApplication.ModalResponse.OK {
                 guard let url = panel.url else {
-                    showMessageAlert(self.view.window, .localized(.saveNoUrl))
+                    showMessageAlert(self.view.window, NSLocalizedString("No URL provided to save the file. Try to save agains", comment: ""))
                     return
                 }
                 self.writeExportedImage(image: image, on: url)
@@ -199,7 +181,7 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
             let pngData = imageRep?.representation(using: .png, properties: [:])
             try pngData?.write(to: url)
         } catch let e {
-            showMessageAlert(view.window, "\(String.localized(.saveErrorOn)) \(url.standardized.path)", error: e)
+            showMessageAlert(view.window, "\(NSLocalizedString("Failed to save file on", comment: "")) \(url.standardized.path)", error: e)
         }
     }
     
@@ -212,8 +194,8 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
     }
     
     private func updateResolution(width widthString: String, height heightString: String) -> Bool {
-        guard let width = Int(widthString) else { print("\(widthString) \(String.localized(.notANumber))"); return false }
-        guard let height = Int(heightString) else { print("\(heightString) \(String.localized(.notANumber))"); return false }
+        guard let width = Int(widthString) else { print("\(widthString) \(NSLocalizedString("is not a number!", comment: ""))"); return false }
+        guard let height = Int(heightString) else { print("\(heightString) \(NSLocalizedString("is not a number!", comment: ""))"); return false }
         
         resolution = CGSize(width: width, height: height)
         return true
