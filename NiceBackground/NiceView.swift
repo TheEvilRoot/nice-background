@@ -118,6 +118,12 @@ class NiceView : NSView {
         }
     }
     
+    var borderBlurRadius: CGFloat = CGFloat(16.0) {
+        didSet {
+            needsDisplay = true
+        }
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         preserveContext {
@@ -142,13 +148,14 @@ class NiceView : NSView {
         if let centerImage = centerImage {
             let imageSize = centerImage.centerDimensions(frame, allowedPadding: allowedPadding)
             let imagePos = centerCoordinates(frame, withSize: imageSize) + pos
+            let imageRect = CGRect(origin: imagePos, size: imageSize)
             if (strokeWidth > 0) {
                 ctx.cgContext.setFillColor(strokeColor)
                 ctx.cgContext.beginPath()
                 ctx.cgContext.addRect(CGRect(origin: imagePos - strokeWidth, size: imageSize + (strokeWidth * 2)))
                 ctx.cgContext.fillPath()
             }
-            ctx.cgContext.draw(centerImage.image, in: CGRect(origin: imagePos, size: imageSize))
+            ctx.cgContext.draw(centerImage.image, in: imageRect)
         }
     }
     
