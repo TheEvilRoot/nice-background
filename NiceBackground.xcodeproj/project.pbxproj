@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		691C76772620F0D1000517E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76762620F0D1000517E6 /* AppDelegate.swift */; };
+		691C76792620F0D1000517E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76782620F0D1000517E6 /* ViewController.swift */; };
+		691C767C2620F0D1000517E6 /* NiceBackground.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 691C767A2620F0D1000517E6 /* NiceBackground.xcdatamodeld */; };
+		691C767E2620F0D5000517E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691C767D2620F0D5000517E6 /* Assets.xcassets */; };
+		691C76812620F0D5000517E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691C767F2620F0D5000517E6 /* Main.storyboard */; };
+		691C768C2620F255000517E6 /* NiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C768B2620F255000517E6 /* NiceView.swift */; };
+		691C768F262105C1000517E6 /* DragAndDropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C768E262105C1000517E6 /* DragAndDropImageView.swift */; };
+		691C76922621C1C4000517E6 /* VectorMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76912621C1C4000517E6 /* VectorMath.swift */; };
+		691C769E2621C9ED000517E6 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C769D2621C9ED000517E6 /* WindowController.swift */; };
+		691C76A1262269CF000517E6 /* ResolutionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76A0262269CF000517E6 /* ResolutionHelper.swift */; };
+		691C76A8262286B1000517E6 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76A7262286B1000517E6 /* DialogHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		691C76732620F0D1000517E6 /* NiceBackground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceBackground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		691C76762620F0D1000517E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		691C76782620F0D1000517E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		691C767B2620F0D1000517E6 /* NiceBackground.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NiceBackground.xcdatamodel; sourceTree = "<group>"; };
+		691C767D2620F0D5000517E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		691C76802620F0D5000517E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		691C76822620F0D5000517E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		691C76832620F0D5000517E6 /* NiceBackground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NiceBackground.entitlements; sourceTree = "<group>"; };
+		691C768B2620F255000517E6 /* NiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceView.swift; sourceTree = "<group>"; };
+		691C768E262105C1000517E6 /* DragAndDropImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropImageView.swift; sourceTree = "<group>"; };
+		691C76912621C1C4000517E6 /* VectorMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorMath.swift; sourceTree = "<group>"; };
+		691C769D2621C9ED000517E6 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		691C76A0262269CF000517E6 /* ResolutionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionHelper.swift; sourceTree = "<group>"; };
+		691C76A7262286B1000517E6 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		691C76702620F0D1000517E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		691C766A2620F0D1000517E6 = {
+			isa = PBXGroup;
+			children = (
+				691C76752620F0D1000517E6 /* NiceBackground */,
+				691C76742620F0D1000517E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		691C76742620F0D1000517E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				691C76732620F0D1000517E6 /* NiceBackground.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		691C76752620F0D1000517E6 /* NiceBackground */ = {
+			isa = PBXGroup;
+			children = (
+				691C76762620F0D1000517E6 /* AppDelegate.swift */,
+				691C76782620F0D1000517E6 /* ViewController.swift */,
+				691C767D2620F0D5000517E6 /* Assets.xcassets */,
+				691C767F2620F0D5000517E6 /* Main.storyboard */,
+				691C76822620F0D5000517E6 /* Info.plist */,
+				691C76832620F0D5000517E6 /* NiceBackground.entitlements */,
+				691C767A2620F0D1000517E6 /* NiceBackground.xcdatamodeld */,
+				691C768B2620F255000517E6 /* NiceView.swift */,
+				691C768E262105C1000517E6 /* DragAndDropImageView.swift */,
+				691C76912621C1C4000517E6 /* VectorMath.swift */,
+				691C769D2621C9ED000517E6 /* WindowController.swift */,
+				691C76A0262269CF000517E6 /* ResolutionHelper.swift */,
+				691C76A7262286B1000517E6 /* DialogHelper.swift */,
+			);
+			path = NiceBackground;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		691C76722620F0D1000517E6 /* NiceBackground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 691C76862620F0D5000517E6 /* Build configuration list for PBXNativeTarget "NiceBackground" */;
+			buildPhases = (
+				691C766F2620F0D1000517E6 /* Sources */,
+				691C76702620F0D1000517E6 /* Frameworks */,
+				691C76712620F0D1000517E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NiceBackground;
+			productName = NiceBackground;
+			productReference = 691C76732620F0D1000517E6 /* NiceBackground.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		691C766B2620F0D1000517E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					691C76722620F0D1000517E6 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 691C766E2620F0D1000517E6 /* Build configuration list for PBXProject "NiceBackground" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 691C766A2620F0D1000517E6;
+			productRefGroup = 691C76742620F0D1000517E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				691C76722620F0D1000517E6 /* NiceBackground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		691C76712620F0D1000517E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691C767E2620F0D5000517E6 /* Assets.xcassets in Resources */,
+				691C76812620F0D5000517E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		691C766F2620F0D1000517E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691C76792620F0D1000517E6 /* ViewController.swift in Sources */,
+				691C767C2620F0D1000517E6 /* NiceBackground.xcdatamodeld in Sources */,
+				691C76A8262286B1000517E6 /* DialogHelper.swift in Sources */,
+				691C76772620F0D1000517E6 /* AppDelegate.swift in Sources */,
+				691C769E2621C9ED000517E6 /* WindowController.swift in Sources */,
+				691C768C2620F255000517E6 /* NiceView.swift in Sources */,
+				691C76A1262269CF000517E6 /* ResolutionHelper.swift in Sources */,
+				691C76922621C1C4000517E6 /* VectorMath.swift in Sources */,
+				691C768F262105C1000517E6 /* DragAndDropImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		691C767F2620F0D5000517E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				691C76802620F0D5000517E6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		691C76842620F0D5000517E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		691C76852620F0D5000517E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		691C76872620F0D5000517E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NiceBackground/NiceBackground.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 959U4P4SU9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = NiceBackground/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theevilroot.NiceBackground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		691C76882620F0D5000517E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NiceBackground/NiceBackground.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 959U4P4SU9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = NiceBackground/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theevilroot.NiceBackground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		691C766E2620F0D1000517E6 /* Build configuration list for PBXProject "NiceBackground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				691C76842620F0D5000517E6 /* Debug */,
+				691C76852620F0D5000517E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		691C76862620F0D5000517E6 /* Build configuration list for PBXNativeTarget "NiceBackground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				691C76872620F0D5000517E6 /* Debug */,
+				691C76882620F0D5000517E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		691C767A2620F0D1000517E6 /* NiceBackground.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				691C767B2620F0D1000517E6 /* NiceBackground.xcdatamodel */,
+			);
+			currentVersion = 691C767B2620F0D1000517E6 /* NiceBackground.xcdatamodel */;
+			path = NiceBackground.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 691C766B2620F0D1000517E6 /* Project object */;
+}
