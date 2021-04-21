@@ -8,6 +8,14 @@
 
 ## Screenshot 
 
+#### Version 1.1
+
+*  Moving image!
+* Bug fixes
+* Short labels on the toolbar
+
+![Screenshot](Support/screen-2.png)
+
 #### Version 1.0
 
 ![Screenshot](Support/screen-1.png)

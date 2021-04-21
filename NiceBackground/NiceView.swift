@@ -9,13 +9,6 @@ import Foundation
 import Cocoa
 import AppKit
 
-fileprivate func preserveContext (context: NSGraphicsContext? = NSGraphicsContext.current, _ f: (NSGraphicsContext) -> Void) {
-    guard let context = context else { return }
-    context.saveGraphicsState()
-    f(context)
-    context.restoreGraphicsState()
-}
-
 fileprivate func fitInto(_ cgSize: CGSize, ratio: CGFloat, miniman value: CGFloat, allowedPadding pad: CGFloat) -> CGSize {
     if cgSize.width < cgSize.height {
         let newHeight = value * pad
@@ -42,15 +35,6 @@ fileprivate func dimensions(in rect: CGRect, with ratio: CGFloat) -> CGSize {
         let newHeight = newWidth / ratio;
         return CGSize(width: newWidth, height: newHeight)
     }
-}
-
-fileprivate func centerCoordinates(_ rect: CGRect, withSize size: CGSize) -> CGPoint {
-    let centerX = rect.width / 2
-    let centerY = rect.height / 2
-    let halfWidth = CGFloat(size.width / 2)
-    let halfHeight = CGFloat(size.height / 2)
-    
-    return CGPoint(x: centerX - halfWidth, y: centerY - halfHeight)
 }
 
 class NiceView : NSView {
@@ -124,6 +108,12 @@ class NiceView : NSView {
         }
     }
     
+    var position: CGPoint = CGPoint(x: 0.5, y: 0.5) {
+        didSet {
+            needsDisplay = true
+        }
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         preserveContext {
@@ -131,7 +121,7 @@ class NiceView : NSView {
         }
         preserveContext {
             let size = dimensions(in: frame, with: aspectRatio)
-            let center = centerCoordinates(frame, withSize: size)
+            let center = centerCoordinates(frame, withSize: size, verticalPosition: 0.5, horizontalPosition: 0.5)
             drawContent(CGRect(origin: center, size: size), center, $0)
         }
     }
@@ -147,7 +137,7 @@ class NiceView : NSView {
         
         if let centerImage = centerImage {
             let imageSize = centerImage.centerDimensions(frame, allowedPadding: allowedPadding)
-            let imagePos = centerCoordinates(frame, withSize: imageSize) + pos
+            let imagePos = centerCoordinates(frame, withSize: imageSize, verticalPosition: position.y, horizontalPosition: position.x) + pos
             let imageRect = CGRect(origin: imagePos, size: imageSize)
             if (strokeWidth > 0) {
                 ctx.cgContext.setFillColor(strokeColor)

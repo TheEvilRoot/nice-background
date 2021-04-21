@@ -18,6 +18,8 @@
 		691C769E2621C9ED000517E6 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C769D2621C9ED000517E6 /* WindowController.swift */; };
 		691C76A1262269CF000517E6 /* ResolutionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76A0262269CF000517E6 /* ResolutionHelper.swift */; };
 		691C76A8262286B1000517E6 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C76A7262286B1000517E6 /* DialogHelper.swift */; };
+		695053B82625B028000AE932 /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695053B72625B028000AE932 /* PositionView.swift */; };
+		695053C02625B10E000AE932 /* DrawHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695053BF2625B10E000AE932 /* DrawHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,8 @@
 		691C76A0262269CF000517E6 /* ResolutionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionHelper.swift; sourceTree = "<group>"; };
 		691C76A7262286B1000517E6 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
 		691C76AE2623BE52000517E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		691C76AF2623BEE3000517E6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		695053B72625B028000AE932 /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		695053BF2625B10E000AE932 /* DrawHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 		691C76752620F0D1000517E6 /* NiceBackground */ = {
 			isa = PBXGroup;
 			children = (
+				695053C22625BCAC000AE932 /* Helpers */,
 				691C76762620F0D1000517E6 /* AppDelegate.swift */,
 				691C76782620F0D1000517E6 /* ViewController.swift */,
 				691C767D2620F0D5000517E6 /* Assets.xcassets */,
@@ -77,12 +81,21 @@
 				691C767A2620F0D1000517E6 /* NiceBackground.xcdatamodeld */,
 				691C768B2620F255000517E6 /* NiceView.swift */,
 				691C768E262105C1000517E6 /* DragAndDropImageView.swift */,
-				691C76912621C1C4000517E6 /* VectorMath.swift */,
 				691C769D2621C9ED000517E6 /* WindowController.swift */,
-				691C76A0262269CF000517E6 /* ResolutionHelper.swift */,
-				691C76A7262286B1000517E6 /* DialogHelper.swift */,
+				695053B72625B028000AE932 /* PositionView.swift */,
 			);
 			path = NiceBackground;
+			sourceTree = "<group>";
+		};
+		695053C22625BCAC000AE932 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				691C76A0262269CF000517E6 /* ResolutionHelper.swift */,
+				695053BF2625B10E000AE932 /* DrawHelper.swift */,
+				691C76A7262286B1000517E6 /* DialogHelper.swift */,
+				691C76912621C1C4000517E6 /* VectorMath.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +141,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				ru,
 			);
 			mainGroup = 691C766A2620F0D1000517E6;
 			productRefGroup = 691C76742620F0D1000517E6 /* Products */;
@@ -162,9 +174,11 @@
 				691C76A8262286B1000517E6 /* DialogHelper.swift in Sources */,
 				691C76772620F0D1000517E6 /* AppDelegate.swift in Sources */,
 				691C769E2621C9ED000517E6 /* WindowController.swift in Sources */,
+				695053B82625B028000AE932 /* PositionView.swift in Sources */,
 				691C768C2620F255000517E6 /* NiceView.swift in Sources */,
 				691C76A1262269CF000517E6 /* ResolutionHelper.swift in Sources */,
 				691C76922621C1C4000517E6 /* VectorMath.swift in Sources */,
+				695053C02625B10E000AE932 /* DrawHelper.swift in Sources */,
 				691C768F262105C1000517E6 /* DragAndDropImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +190,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				691C76AE2623BE52000517E6 /* en */,
-				691C76AF2623BEE3000517E6 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -309,6 +322,7 @@
 				CODE_SIGN_ENTITLEMENTS = NiceBackground/NiceBackground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 959U4P4SU9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NiceBackground/Info.plist;
@@ -317,6 +331,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theevilroot.NiceBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -331,6 +346,7 @@
 				CODE_SIGN_ENTITLEMENTS = NiceBackground/NiceBackground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 959U4P4SU9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NiceBackground/Info.plist;
@@ -339,6 +355,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theevilroot.NiceBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

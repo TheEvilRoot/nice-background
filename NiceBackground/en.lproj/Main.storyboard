@@ -386,7 +386,7 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="OE1-hJ-axT"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="epJ-eh-lPP"/>
-                                <toolbarItem implicitItemIdentifier="068CABEB-6F05-4E08-A013-F41B6D6B4E2A" label="Open Image" paletteLabel="Open Image" tag="-1" image="Image" id="FQp-Yv-uUa">
+                                <toolbarItem implicitItemIdentifier="068CABEB-6F05-4E08-A013-F41B6D6B4E2A" label="Image" paletteLabel="Image" tag="-1" image="Image" id="FQp-Yv-uUa">
                                     <size key="minSize" width="22" height="22"/>
                                     <size key="maxSize" width="22" height="22"/>
                                     <connections>
@@ -400,14 +400,14 @@
                                         <action selector="exportAction:" target="B8D-0N-5wS" id="qg3-WT-psJ"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="AFA3C722-71CD-4FED-BD09-F03F6411CB00" label="Copy to clipboard" paletteLabel="Copy to clipboard" tag="-1" image="Copy" id="H4o-NH-jWT">
+                                <toolbarItem implicitItemIdentifier="AFA3C722-71CD-4FED-BD09-F03F6411CB00" label="Copy" paletteLabel="Copy" tag="-1" image="Copy" id="H4o-NH-jWT">
                                     <size key="minSize" width="22" height="22"/>
                                     <size key="maxSize" width="22" height="22"/>
                                     <connections>
                                         <action selector="exportAction:" target="B8D-0N-5wS" id="rQA-1V-PUq"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="7FD85B62-B886-4153-B1E8-5A2CFCD4AAC2" label="Paste image from clipboard" paletteLabel="Paste image from clipboard" tag="-1" image="Paste" id="TfG-bt-hey">
+                                <toolbarItem implicitItemIdentifier="7FD85B62-B886-4153-B1E8-5A2CFCD4AAC2" label="Paste" paletteLabel="Paste" tag="-1" image="Paste" id="TfG-bt-hey">
                                     <size key="minSize" width="22" height="22"/>
                                     <size key="maxSize" width="22" height="22"/>
                                     <connections>
@@ -438,17 +438,18 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="NiceBackground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="974" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1250" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="kpQ-dT-ldZ" customClass="NiceView" customModule="NiceBackground" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="958" height="454"/>
+                                <rect key="frame" x="8" y="8" width="1234" height="454"/>
                             </customView>
                             <gridView xPlacement="fill" yPlacement="top" rowAlignment="none" rowSpacing="8" columnSpacing="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="3NK-PH-RgP">
-                                <rect key="frame" x="149" y="496" width="248" height="96"/>
+                                <rect key="frame" x="149" y="458" width="248" height="134"/>
                                 <rows>
                                     <gridRow id="AKN-6R-Vr9"/>
                                     <gridRow id="lq3-cS-UC2"/>
+                                    <gridRow id="gam-ts-beW"/>
                                 </rows>
                                 <columns>
                                     <gridColumn id="ED6-7Q-KWa"/>
@@ -456,7 +457,7 @@
                                 <gridCells>
                                     <gridCell row="AKN-6R-Vr9" column="ED6-7Q-KWa" id="SLs-Bu-9Qk">
                                         <gridView key="contentView" xPlacement="leading" yPlacement="fill" rowAlignment="none" rowSpacing="8" columnSpacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wP7-RX-qLv" userLabel="ImagePaddingBox">
-                                            <rect key="frame" x="0.0" y="52" width="248" height="44"/>
+                                            <rect key="frame" x="0.0" y="90" width="248" height="44"/>
                                             <constraints>
                                                 <constraint firstItem="mxH-85-2u8" firstAttribute="leading" secondItem="wP7-RX-qLv" secondAttribute="leading" id="UJM-du-bY8"/>
                                                 <constraint firstItem="mxH-85-2u8" firstAttribute="leading" secondItem="wP7-RX-qLv" secondAttribute="leading" id="kqQ-2x-LYl"/>
@@ -506,7 +507,7 @@
                                     </gridCell>
                                     <gridCell row="lq3-cS-UC2" column="ED6-7Q-KWa" id="qDZ-Nu-lrv">
                                         <gridView key="contentView" xPlacement="leading" yPlacement="fill" rowAlignment="none" rowSpacing="8" columnSpacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-3J-m2F" userLabel="StrokeWidthBox">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="44"/>
+                                            <rect key="frame" x="0.0" y="38" width="248" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ZLU-cF-if7" secondAttribute="trailing" constant="8" id="1I7-ub-Qdl"/>
                                                 <constraint firstItem="ZLU-cF-if7" firstAttribute="leading" secondItem="QT5-3J-m2F" secondAttribute="leading" id="T6o-xi-Oje"/>
@@ -543,7 +544,7 @@
                                                 <gridCell row="s0s-fa-UAB" column="etx-rr-o5V" headOfMergedCell="n2W-wW-KHW" id="n2W-wW-KHW">
                                                     <slider key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZLU-cF-if7">
                                                         <rect key="frame" x="-2" y="-6" width="244" height="28"/>
-                                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="20" doubleValue="5" tickMarkPosition="above" sliderType="linear" id="Tno-GK-y71"/>
+                                                        <sliderCell key="cell" continuous="YES" alignment="left" maxValue="20" tickMarkPosition="above" sliderType="linear" id="Tno-GK-y71"/>
                                                         <connections>
                                                             <action selector="strokeSlider:" target="XfG-lQ-9wD" id="lZS-jI-urK"/>
                                                         </connections>
@@ -553,10 +554,11 @@
                                             </gridCells>
                                         </gridView>
                                     </gridCell>
+                                    <gridCell row="gam-ts-beW" column="ED6-7Q-KWa" id="zay-uc-ctA"/>
                                 </gridCells>
                             </gridView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dBa-wv-5vU" customClass="DragAndDropImageView" customModule="NiceBackground" customModuleProvider="target">
-                                <rect key="frame" x="841" y="467" width="128" height="128"/>
+                                <rect key="frame" x="1117" y="467" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="9eN-Ws-1z8"/>
                                     <constraint firstAttribute="width" constant="122" id="xkT-Mm-mZk"/>
@@ -742,20 +744,79 @@
                                     </gridCell>
                                 </gridCells>
                             </gridView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VYq-Kd-5fH">
+                                <rect key="frame" x="1040" y="522" width="59" height="18"/>
+                                <buttonCell key="cell" type="inline" title="Center" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="bE7-UR-zGh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="fullCenter:" target="XfG-lQ-9wD" id="7vf-vk-iES"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcU-a9-8J0">
+                                <rect key="frame" x="1040" y="494" width="59" height="20"/>
+                                <buttonCell key="cell" type="inline" title="V Center" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="d5s-zb-Xn1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="vertialCenter:" target="XfG-lQ-9wD" id="l3u-yD-fBO"/>
+                                </connections>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="IRP-am-0NA" customClass="PositionView" customModule="NiceBackground" customModuleProvider="target">
+                                <rect key="frame" x="915" y="475" width="117" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="N60-rp-vDi"/>
+                                    <constraint firstAttribute="height" constant="117" id="ok7-Xc-lMw"/>
+                                </constraints>
+                            </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3f1-7m-ywe">
+                                <rect key="frame" x="1040" y="548" width="59" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="LXr-GC-uak"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="H Center" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="gjt-27-hL6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="horizontalCenter:" target="XfG-lQ-9wD" id="B4g-Hu-ate"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="dBa-wv-5vU" firstAttribute="leading" secondItem="JcU-a9-8J0" secondAttribute="trailing" constant="21" id="2pz-UJ-aWT"/>
+                            <constraint firstItem="3f1-7m-ywe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="33" id="399-AF-E53"/>
+                            <constraint firstItem="3f1-7m-ywe" firstAttribute="trailing" secondItem="VYq-Kd-5fH" secondAttribute="trailing" id="3gx-9e-qJk"/>
                             <constraint firstAttribute="trailing" secondItem="kpQ-dT-ldZ" secondAttribute="trailing" constant="8" id="3m6-cU-8b2"/>
+                            <constraint firstItem="JcU-a9-8J0" firstAttribute="top" secondItem="VYq-Kd-5fH" secondAttribute="bottom" constant="8" id="B5E-GL-gMV"/>
                             <constraint firstItem="kpQ-dT-ldZ" firstAttribute="top" secondItem="dBa-wv-5vU" secondAttribute="bottom" constant="8" symbolic="YES" id="BPf-fH-FbB"/>
+                            <constraint firstItem="3f1-7m-ywe" firstAttribute="leading" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" id="CJ5-Bj-OkV"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="top" secondItem="3f1-7m-ywe" secondAttribute="bottom" constant="8" id="Exy-aA-TDp"/>
                             <constraint firstItem="kpQ-dT-ldZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="GhM-tc-zlz"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="top" secondItem="3f1-7m-ywe" secondAttribute="bottom" constant="8" id="GoA-c8-1UU"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="leading" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" id="HL0-PT-83p"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fgl-5b-p8K" secondAttribute="trailing" constant="8" symbolic="YES" id="JIQ-gi-IgU"/>
+                            <constraint firstItem="kpQ-dT-ldZ" firstAttribute="top" secondItem="JcU-a9-8J0" secondAttribute="bottom" constant="32" id="Jgx-Wb-VH7"/>
                             <constraint firstItem="dBa-wv-5vU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="KiF-EQ-V55"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="leading" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" symbolic="YES" id="Lmz-WE-7Bw"/>
                             <constraint firstItem="c89-Wf-FNM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="Qci-sY-qrD"/>
                             <constraint firstItem="3NK-PH-RgP" firstAttribute="leading" secondItem="c89-Wf-FNM" secondAttribute="trailing" constant="32" id="RW5-aL-Wmo"/>
                             <constraint firstItem="c89-Wf-FNM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="STG-j9-f1A"/>
+                            <constraint firstItem="JcU-a9-8J0" firstAttribute="leading" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" id="TdR-gC-2dm"/>
+                            <constraint firstItem="JcU-a9-8J0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" symbolic="YES" id="Vfq-J9-czc"/>
+                            <constraint firstItem="3f1-7m-ywe" firstAttribute="leading" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" symbolic="YES" id="al2-KD-2E9"/>
+                            <constraint firstItem="IRP-am-0NA" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="arI-aX-OZJ"/>
                             <constraint firstItem="kpQ-dT-ldZ" firstAttribute="top" secondItem="c89-Wf-FNM" secondAttribute="bottom" constant="20" id="bKT-Rf-r1Q"/>
+                            <constraint firstItem="dBa-wv-5vU" firstAttribute="leading" secondItem="3f1-7m-ywe" secondAttribute="trailing" constant="21" id="cBQ-7j-frb"/>
                             <constraint firstItem="Fgl-5b-p8K" firstAttribute="top" secondItem="3NK-PH-RgP" secondAttribute="top" id="e03-Br-xOE"/>
                             <constraint firstItem="Fgl-5b-p8K" firstAttribute="leading" secondItem="3NK-PH-RgP" secondAttribute="trailing" constant="32" id="flO-fT-3q3"/>
                             <constraint firstAttribute="trailing" secondItem="dBa-wv-5vU" secondAttribute="trailing" constant="8" id="gla-j3-xsI"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="centerY" secondItem="dBa-wv-5vU" secondAttribute="centerY" id="o4R-ea-YZ0"/>
+                            <constraint firstItem="VYq-Kd-5fH" firstAttribute="leading" secondItem="IRP-am-0NA" secondAttribute="trailing" constant="8" id="tI7-Ki-UcG"/>
                             <constraint firstItem="dBa-wv-5vU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="taS-IR-O9V"/>
+                            <constraint firstItem="JcU-a9-8J0" firstAttribute="top" secondItem="VYq-Kd-5fH" secondAttribute="bottom" constant="8" id="voI-GG-2jU"/>
                             <constraint firstItem="3NK-PH-RgP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="vpD-ev-gt5"/>
                             <constraint firstAttribute="bottom" secondItem="kpQ-dT-ldZ" secondAttribute="bottom" constant="8" id="xN7-9C-cgS"/>
                         </constraints>
@@ -767,6 +828,7 @@
                         <outlet property="niceView" destination="kpQ-dT-ldZ" id="WQs-z8-0MR"/>
                         <outlet property="paddingLabel" destination="195-BV-7mf" id="kiV-sS-Od3"/>
                         <outlet property="paddingSlider" destination="mxH-85-2u8" id="4MU-TR-3dp"/>
+                        <outlet property="positionView" destination="IRP-am-0NA" id="K5F-hC-ZdR"/>
                         <outlet property="resolutionHeight" destination="eUo-wG-A4A" id="H41-lW-l3J"/>
                         <outlet property="resolutionWidth" destination="Rux-1U-3DW" id="fT8-tj-USG"/>
                         <outlet property="strokeLabel" destination="R1U-3T-baO" id="6CW-bf-lQH"/>
@@ -776,7 +838,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="1314"/>
+            <point key="canvasLocation" x="470" y="1314"/>
         </scene>
     </scenes>
     <resources>

@@ -19,7 +19,7 @@ func getScreen(_ window: NSWindow?) -> NSScreen? {
 
 func getCurrentResolution(window: NSWindow?) -> CGSize {
     if let screen = getScreen(window) {
-        return screen.frame.size * screen.backingScaleFactor
+        return screen.frame.size
     } else {
         return CGSize.zero
     }

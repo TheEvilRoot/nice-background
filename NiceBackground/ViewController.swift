@@ -7,7 +7,9 @@
 
 import Cocoa
 
-class ViewController: NSViewController, DragAndDropImageViewDelegate {
+class ViewController: NSViewController, DragAndDropImageViewDelegate, PositionViewListener {
+    
+    /* -------- VIEWS -------- */
     
     @IBOutlet weak var niceView: NiceView!
     @IBOutlet weak var backgroundPicker: NSColorWell!
@@ -24,6 +26,10 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
     @IBOutlet weak var resolutionWidth: NSTextField!
     @IBOutlet weak var resolutionHeight: NSTextField!
     @IBOutlet weak var currentResolution: NSTextField!
+    
+    @IBOutlet weak var positionView: PositionView!
+    
+    /* -------- STATE VARIABLES -------- */
     
     var backgroundColor: NSColor = NSColor.black {
         didSet {
@@ -66,9 +72,18 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         }
     }
     
+    var position: CGPoint = CGPoint(x: 0.5, y: 0.5) {
+        didSet {
+            niceView.position = position
+        }
+    }
+    
+    /* -------- VIEW CONTROLLER LIFECYCLE -------- */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         centerImagePicker.delegate = self
+        positionView.listener = self
         syncPickers()
         setupResulutionRatioControl()
         subscribeActions()
@@ -77,6 +92,22 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
     override func viewWillDisappear() {
         super.viewWillDisappear()
         disposeSubscriptions()
+    }
+    
+    /* -------- VIEWS ACTIONS -------- */
+    
+    @IBAction func vertialCenter(_ sender: Any) {
+        let current = positionView.currentPosition
+        positionView.currentPosition = CGPoint(x: current.x, y: 0.5)
+    }
+    
+    @IBAction func fullCenter(_ sender: Any) {
+        positionView.currentPosition = CGPoint(x: 0.5, y: 0.5)
+    }
+    
+    @IBAction func horizontalCenter(_ sender: Any) {
+        let current = positionView.currentPosition
+        positionView.currentPosition = CGPoint(x: 0.5, y: current.y)
     }
     
     @IBAction func strokePicker(_ sender: NSColorWell) {
@@ -106,6 +137,8 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         setupResulutionRatioControl()
     }
     
+    /* -------- VIEWS CALLBACKS -------- */
+    
     func imageDragged(image: NSImage) {
         centerImage = image
     }
@@ -115,6 +148,12 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
             centerImage = NSImage(contentsOfFile: path)
         }
     }
+    
+    func positionView(positionChanged value: CGPoint, on view: PositionView) {
+        niceView.position = value
+    }
+    
+    /* -------- NOTIFICATION ACTIONS -------- */
     
     @objc func exportAction() {
         saveNSImage(niceView.export(size: resolution))
@@ -137,7 +176,7 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
             imageDragged(image: first)
         }
     }
- 
+    
     @objc func openImageAction() {
         guard let window = view.window else { print ("openImageAction/window is nil"); return }
         let panel = NSOpenPanel()
@@ -147,7 +186,10 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         panel.prompt = NSLocalizedString("Open", comment: "")
         panel.beginSheetModal(for: window, completionHandler: { response in
             if response == NSApplication.ModalResponse.OK {
-                guard let url = panel.url else { print("No url seleced!"); return }
+                guard let url = panel.url else {
+                    showMessageAlert(window, NSLocalizedString("Please, select valid image file", comment: ""), style: .informational)
+                    return
+                }
                 self.imageDragged(on: NSURL(fileURLWithPath: url.path))
             }
         })
@@ -156,6 +198,16 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
     @objc func updateScreenResolution() {
         setCurrentResolution(getCurrentResolution(window: view.window))
     }
+    
+    @objc private func setupResulutionRatioControl() {
+        if resolution.width == 0 || resolution.height == 0 {
+            let current = getCurrentResolution(window: view.window)
+            resolution = current
+            setCurrentResolution(current)
+        }
+    }
+    
+    /* -------- LOGIC FUNCTIONS -------- */
     
     private func saveNSImage(_ image: NSImage) {
         guard let window = view.window else { print ("saveNSImage/window is nil"); return }
@@ -167,7 +219,7 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         panel.beginSheetModal(for: window, completionHandler: { response in
             if response == NSApplication.ModalResponse.OK {
                 guard let url = panel.url else {
-                    showMessageAlert(self.view.window, NSLocalizedString("No URL provided to save the file. Try to save agains", comment: ""))
+                    showMessageAlert(self.view.window, NSLocalizedString("No URL provided to save the file. Try to save again", comment: ""))
                     return
                 }
                 self.writeExportedImage(image: image, on: url)
@@ -181,21 +233,19 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
             let pngData = imageRep?.representation(using: .png, properties: [:])
             try pngData?.write(to: url)
         } catch let e {
-            showMessageAlert(view.window, "\(NSLocalizedString("Failed to save file on", comment: "")) \(url.standardized.path)", error: e)
-        }
-    }
-    
-    @objc private func setupResulutionRatioControl() {
-        if resolution.width == 0 || resolution.height == 0 {
-            let current = getCurrentResolution(window: view.window)
-            resolution = current
-            setCurrentResolution(current)
+            showMessageAlert(view.window, "\(NSLocalizedString("Failed to save file on", comment: "")) \(url.standardized.path)", error: e, style: .critical)
         }
     }
     
     private func updateResolution(width widthString: String, height heightString: String) -> Bool {
-        guard let width = Int(widthString) else { print("\(widthString) \(NSLocalizedString("is not a number!", comment: ""))"); return false }
-        guard let height = Int(heightString) else { print("\(heightString) \(NSLocalizedString("is not a number!", comment: ""))"); return false }
+        guard let width = Int(widthString) else {
+            showMessageAlert(view.window, "\(widthString) \(NSLocalizedString("is not a number!", comment: ""))", style: .warning)
+            return false
+        }
+        guard let height = Int(heightString) else {
+            showMessageAlert(view.window, "\(widthString) \(NSLocalizedString("is not a number!", comment: ""))", style: .warning)
+            return false
+        }
         
         resolution = CGSize(width: width, height: height)
         return true
@@ -211,6 +261,7 @@ class ViewController: NSViewController, DragAndDropImageViewDelegate {
         allowedPadding = paddingSlider.intValue
         strokeWidth = strokeSlider.intValue
         strokeColor = strokePicker.color
+        position = positionView.currentPosition
         syncResolution()
     }
     
